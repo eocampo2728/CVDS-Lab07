@@ -75,9 +75,21 @@ public class MyBatisExample {
         // Consulta del cliente de documento #6 llamado Elkin.
         System.out.println(cm.consultarCliente(6));
         
+        cm.agregarItemRentadoACliente(6, 2, dateFormat("4/10/2019"), dateFormat("20/12/2019"));
+        
 
         sqlss.commit();
         sqlss.close();
+    }
+    
+    public static Date dateFormat(String date) {
+        Date format;
+        try {
+            format = new SimpleDateFormat("dd/MM/yyyy").parse(date);
+        } catch (ParseException e) {
+            format = null;
+        }
+        return format;
     }
     
 
