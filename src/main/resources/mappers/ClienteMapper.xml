@@ -74,6 +74,9 @@
         <collection property='rentados' ofType='ItemRentado' resultMap="ClienteResult" columnPrefix="item_"></collection>
     </resultMap>
     
+    <resultMap type='ItemRentado' id="ItemRentadoResult">            
+	<association property='rentados' resultMap='edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper.ItemResult'></association> 
+    </resultMap>
 
           	
 </mapper>
