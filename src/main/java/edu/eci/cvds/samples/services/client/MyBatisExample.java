@@ -22,7 +22,6 @@ import java.io.InputStream;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -64,6 +63,7 @@ public class MyBatisExample {
     public static void main(String args[]) throws SQLException {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
         SqlSession sqlss = sessionfact.openSession();
+        
         //Crear el mapper y usarlo: 
         ClienteMapper cm = sqlss.getMapper(ClienteMapper.class);
         // Consulta de todos los clientes.
@@ -75,9 +75,9 @@ public class MyBatisExample {
         // Consulta del cliente de documento #6 llamado Elkin.
         System.out.println(cm.consultarCliente(6));
         
-        cm.agregarItemRentadoACliente(6, 2, dateFormat("4/10/2019"), dateFormat("20/12/2019"));
+        // Se agrega el itemRentado 15 "Mazda" al cliente #6 Elkin con las fechas respectivas. 
+        cm.agregarItemRentadoACliente(6, 15, dateFormat("4/10/2019"), dateFormat("20/12/2019"));
         
-
         sqlss.commit();
         sqlss.close();
     }

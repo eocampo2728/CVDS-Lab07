@@ -16,5 +16,10 @@
         <association property='tipo' javaType = 'TipoItem' columnPrefix='tipoitem_'></association>
     </resultMap>
     
+    <insert parameterType="map" id="insertarItem">
+        insert into VI_ITEM(CLIENTES_documento,ITEMS_id,fechainiciorenta,fechafinrenta)
+        values (#{idcli},#{iditem},#{fechainicial},#{fechafinal})
+        
+    </insert>
     
 </mapper>
