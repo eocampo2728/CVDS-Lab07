@@ -9,11 +9,12 @@
         <id property='id' column='id'/>
         <result property='nombre' column='nombre'/>
         <result property='descripcion' column='descripcion'/>
-        <result property='fechaLanzamiento' column='fechaLanzamiento'/>
-        <result property='tarifaxDia' column='tarifaxDia'/> 
-        <result property='formatoRenta' column='formatoRenta'/>
+        <result property='fechaLanzamiento' column='fechalanzamiento'/>
+        <result property='tarifaxDia' column='tarifaxdia'/>
+        <result property='formatoRenta' column='formatorenta'/> 
         <result property='genero' column='genero'/>
-        <association property="tipo" javaType="TipoItem"></association>       
-    </resultMap>    
+        <association property='tipo' javaType = 'TipoItem' columnPrefix='tipoitem_'></association>
+    </resultMap>
+    
     
 </mapper>
